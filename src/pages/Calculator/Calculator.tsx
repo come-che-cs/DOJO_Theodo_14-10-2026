@@ -10,7 +10,7 @@ import kanjiBook from "../../assets/kanji/Kanji book.svg";
 import kanjiRight from "../../assets/kanji/Kanji-right.svg";
 import kanjiLeft from "../../assets/kanji/Kanji-left.svg";
 
-import { FOOD_ITEMS, FoodItem } from "../../data/food";
+import { FOOD_ITEMS, FOOD_MENUS, FoodItem } from "../../data/food";
 import { FoodTile } from "../../components";
 
 import { sendData } from "../../utils/send-data";
@@ -65,7 +65,7 @@ export const CalculatorPage: React.FC<Props> = (props: Props) => {
         <div className={classes.calculatorInnerContainer}>
           <div className={classes.scrollContainer}>
             <div className={classes.mainFoodItems}>
-              {FOOD_ITEMS.map((item: FoodItem) => (
+              {[...FOOD_ITEMS, ...FOOD_MENUS].map((item: FoodItem) => (
                 <div className={classes.itemContainer} key={item.name}>
                   <FoodTile
                     name={item.name}
