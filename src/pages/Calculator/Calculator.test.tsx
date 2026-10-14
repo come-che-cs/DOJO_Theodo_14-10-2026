@@ -23,3 +23,14 @@ test("adds the menu bateau kcal once per menu", () => {
 
   expect(getByText(`${2 * MENU_BATEAU.kcal} Kcal`)).toBeInTheDocument();
 });
+
+test("resets all quantities and the kcal when clicking reset", () => {
+  const { getByAltText, getByText } = render(<CalculatorPage />);
+  const menuBateauTile = getMenuBateauTile(getByAltText);
+
+  fireEvent.click(within(menuBateauTile).getByText("+"));
+  fireEvent.click(getByText("Reset"));
+
+  expect(getByText("0 Kcal")).toBeInTheDocument();
+  expect(within(menuBateauTile).getByDisplayValue("0")).toBeInTheDocument();
+});
