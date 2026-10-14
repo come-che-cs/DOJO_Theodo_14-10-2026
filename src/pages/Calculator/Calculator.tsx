@@ -29,9 +29,9 @@ type ClassNames =
   | "buttonContainer"
   | "lateralBar"
   | "barSpacer";
-interface OwnProps {
-  classes: Record<ClassNames, string>;
-}
+// interface OwnProps {
+//   classes: Record<ClassNames, string>;
+// }
 
 type Props = OwnProps;
 
